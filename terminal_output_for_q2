@@ -1,0 +1,45 @@
+Run command: samtools sort HG00096.chrom20.ILLUMINA.bwa.GBR.low_coverage.20120522.bam > HG00096.chrom20.ILLUMINA.bwa.GBR.low_coverage.20120522.sorted.bam
+
+MESSAGE
+[bam_sort_core] merging from 1 files and 1 in-memory blocks...
+
+Run command: samtools flagstat HG00096.chrom20.ILLUMINA.bwa.GBR.low_coverage.20120522.sorted.bam
+
+OUTPUT
+2931500 + 0 in total (QC-passed reads + QC-failed reads)
+0 + 0 secondary
+0 + 0 supplementary
+38913 + 0 duplicates
+2924253 + 0 mapped (99.75% : N/A)
+2921259 + 0 paired in sequencing
+1460558 + 0 read1
+1460701 + 0 read2
+2887804 + 0 properly paired (98.85% : N/A)
+2906765 + 0 with itself and mate mapped
+7247 + 0 singletons (0.25% : N/A)
+4435 + 0 with mate mapped to a different chr
+2338 + 0 with mate mapped to a different chr (mapQ>=5)
+
+Run command: gatk CollectInsertSizeMetrics -INPUT HG00096.chrom20.ILLUMINA.bwa.GBR.low_coverage.20120522.sorted.bam -Histogram_FILE insert_size_distribution_plot.pdf                 -OUTPUT insert_size_information.txt
+
+OUTPUT
+Tool returned:
+0
+
+
+MESSAGE
+Using GATK jar /mnt/c/Users/macri/Downloads/gatk-4.1.4.0/gatk-4.1.4.0/gatk-package-4.1.4.0-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -jar /mnt/c/Users/macri/Downloads/gatk-4.1.4.0/gatk-4.1.4.0/gatk-package-4.1.4.0-local.jar CollectInsertSizeMetrics -INPUT HG00096.chrom20.ILLUMINA.bwa.GBR.low_coverage.20120522.sorted.bam -Histogram_FILE insert_size_distribution_plot.pdf -OUTPUT insert_size_information.txt
+05:49:02.355 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/c/Users/macri/Downloads/gatk-4.1.4.0/gatk-4.1.4.0/gatk-package-4.1.4.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+[Mon Nov 25 05:49:02 GMT 2019] CollectInsertSizeMetrics  --Histogram_FILE insert_size_distribution_plot.pdf --INPUT HG00096.chrom20.ILLUMINA.bwa.GBR.low_coverage.20120522.sorted.bam --OUTPUT insert_size_information.txt  --DEVIATIONS 10.0 --MINIMUM_PCT 0.05 --METRIC_ACCUMULATION_LEVEL ALL_READS --INCLUDE_DUPLICATES false --ASSUME_SORTED true --STOP_AFTER 0 --VERBOSITY INFO --QUIET false --VALIDATION_STRINGENCY STRICT --COMPRESSION_LEVEL 2 --MAX_RECORDS_IN_RAM 500000 --CREATE_INDEX false --CREATE_MD5_FILE false --GA4GH_CLIENT_SECRETS client_secrets.json --help false --version false --showHidden false --USE_JDK_DEFLATER false --USE_JDK_INFLATER false
+Nov 25, 2019 5:49:03 AM shaded.cloud_nio.com.google.auth.oauth2.ComputeEngineCredentials runningOnComputeEngine
+INFO: Failed to detect whether we are running on Google Compute Engine.
+[Mon Nov 25 05:49:03 GMT 2019] Executing as root@LAPTOP-RQJA9S27 on Linux 4.4.0-17763-Microsoft amd64; OpenJDK 64-Bit Server VM 11.0.4+11-post-Ubuntu-1ubuntu218.04.3; Deflater: Intel; Inflater: Intel; Provider GCS is available; Picard version: Version:4.1.4.0
+INFO    2019-11-25 05:49:09     SinglePassSamProgram    Processed     1,000,000 records.  Elapsed time: 00:00:06s.  Time for last 1,000,000:    6s.  Last read position: 20:20,453,333
+INFO    2019-11-25 05:49:14     SinglePassSamProgram    Processed     2,000,000 records.  Elapsed time: 00:00:11s.  Time for last 1,000,000:    4s.  Last read position: 20:43,827,105
+INFO    2019-11-25 05:49:25     RExecutor       Executing R script via command: Rscript /tmp/root/script2049532835832014557.R /mnt/c/Users/macri/Documents/GitHub/Sequencing_analysis_assignment/insert_size_information.txt /mnt/c/Users/macri/Documents/GitHub/Sequencing_analysis_assignment/insert_size_distribution_plot.pdf HG00096.chrom20.ILLUMINA.bwa.GBR.low_coverage.20120522.sorted.bam
+INFO    2019-11-25 05:49:27     ProcessExecutor null device
+INFO    2019-11-25 05:49:27     ProcessExecutor           1
+[Mon Nov 25 05:49:27 GMT 2019] picard.analysis.CollectInsertSizeMetrics done. Elapsed time: 0.43 minutes.
+Runtime.totalMemory()=179306496
